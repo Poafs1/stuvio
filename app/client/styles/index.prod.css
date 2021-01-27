@@ -1,0 +1,336 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&family=Roboto:wght@300;400;500;700&display=swap');
+/* 
+font family 
+font-family: 'Roboto', sans-serif;
+font-family: 'Yesteryear', cursive;
+*/
+
+:root {
+  --primary-white: #f9f9f9;
+  --default-text-color:#f9f9f9;
+  --primary-color:#FFB100;
+  --primary-dark: #000000;
+  --text-color-dark: #353537;
+  --color-fade-dark: #333333;
+  --color-seem-dark: #1A1A1A;
+  --speed: 300ms;
+}
+
+html,
+body {
+  margin: 0;
+  color: var(--default-text-color);
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-dark);
+  min-width: 320px;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  height: auto;
+}
+
+/*  =============================================
+    Index Page
+    ============================================= */
+.index-background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.index-background-video::-webkit-media-controls {
+  display: none;
+}
+.index-content {
+  background: rgba(0, 0, 0, 0.5);
+  min-width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.index-text {
+  height: calc(100vh - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  padding: 0 15px;
+}
+.index-text-title {
+  max-width: 800px;
+}
+.index-text-title h1 {
+  font-weight: 500;
+  margin: 10px;
+  font-size: 48px;
+  line-height: 65px;
+}
+.index-text-details {
+  max-width: 600px;
+}
+.index-text-details p {
+  font-weight: 300;
+  margin: 0px;
+  line-height: 25px;
+}
+.index-direct-button {
+  margin-top: 50px;
+}
+.index-video-timeline {
+  max-width: 960px;
+  bottom: 0;
+  position: absolute;
+  padding: 0 15px;
+  padding-bottom: 50px;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.index-nav {
+  position: fixed;
+  width: 100%;
+}
+.not-support-container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*  =============================================
+    Studio Page
+    ============================================= */
+.studio-container {
+  padding: 0 25px 15px 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 10px auto;
+      grid-template-areas: 
+  "preview-video tools"
+  "timeline timeline";
+  gap: 10px;
+  -ms-grid-columns: 1fr 10px 360px;
+  grid-template-columns: 1fr 360px;
+  
+  position: relative;
+}
+.studio-preview-video {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: preview-video;
+  height: 734px;
+  overflow: hidden;
+}
+.studio-tools {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  height: 734px;
+  grid-area: tools;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: scroll;
+  position: relative;
+}
+.studio-tools-dropzone {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 1);
+}
+.studio-timeline-dropzone {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 1);
+}
+.studio-timeline {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: timeline;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  height: 120px;
+}
+.studio-tools-download {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/*  =============================================
+    CSS Transition
+    ============================================= */
+.menu-primary-enter-done,
+.menu-secondary-enter-done {
+  position: absolute;
+  width: 100%;
+}
+.menu-primary-enter {
+  position: absolute;
+  -webkit-transform: translateX(-110%);
+      -ms-transform: translateX(-110%);
+          transform: translateX(-110%);
+  width: 100%;
+}
+.menu-primary-enter-active {
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all var(--speed) ease;
+  -o-transition: all var(--speed) ease;
+  transition: all var(--speed) ease;
+  width: 100%;
+}
+.menu-primary-exit {
+  position: absolute;
+  width: 100%;
+}
+.menu-primary-exit-active {
+  -webkit-transform: translateX(-110%);
+      -ms-transform: translateX(-110%);
+          transform: translateX(-110%);
+  -webkit-transition: all var(--speed) ease;
+  -o-transition: all var(--speed) ease;
+  transition: all var(--speed) ease;
+  width: 100%;
+}
+.menu-secondary-enter {
+  -webkit-transform: translateX(110%);
+      -ms-transform: translateX(110%);
+          transform: translateX(110%);
+  width: 100%;
+}
+.menu-secondary-enter-active {
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all var(--speed) ease;
+  -o-transition: all var(--speed) ease;
+  transition: all var(--speed) ease;
+  width: 100%;
+}
+.menu-secondary-exit {
+
+}
+.menu-secondary-exit-active {
+  -webkit-transform: translateX(110%);
+      -ms-transform: translateX(110%);
+          transform: translateX(110%);
+  -webkit-transition: all var(--speed) ease;
+  -o-transition: all var(--speed) ease;
+  transition: all var(--speed) ease;
+  width: 100%;
+}
+
+/*  =============================================
+    Cropper JS
+    ============================================= */
+.img-preview,
+.cropper-wrap-box {
+  width: 100% !important;
+}
+
+.cropper-point {
+  background-color: var(--primary-color) !important;
+}
+
+.cropper-view-box {
+  outline: 2px solid var(--primary-color) !important;
+  outline-color: var(--primary-color) !important;
+}
+
+
+/*  =============================================
+    Half of Desktop Screen
+    ============================================= */
+@media screen and (max-width: 960px) {}
+
+@media screen and (max-width: 810px) {}
+
+
+/*  =============================================
+    Floating iPad Screen
+    ============================================= */
+
+/* iPad 2/3 of screen */
+@media screen and (max-width: 782px) {}
+
+/* iPad middle of screen */
+@media screen and (max-width: 580px) {
+  /* Nav Component */
+  .nav-title {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+/* iPad small screen */
+@media screen and (max-width: 320px) {}
+
+
+/*  =============================================
+    Regular iPad Screen
+    ============================================= */
+
+/* iPad Pro */
+@media screen and (max-width: 834px) {}
+
+
+/*  =============================================
+    Mobile Screen
+    ============================================= */
+
+@media screen and (max-width: 414px) {}

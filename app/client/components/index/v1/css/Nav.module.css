@@ -1,0 +1,86 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.container {
+  height: 80px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  padding: 0 25px;
+}
+
+.title {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 80px;
+  white-space: nowrap;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+  color: var(--primary-white);
+}
+
+.title_gradient,
+.title_white {
+  cursor: pointer;
+  z-index: 9999;
+  margin: 0px;
+  font-size: 36px;
+  font-family: 'Yesteryear', cursive;
+}
+
+.title_gradient {
+  background: -webkit-linear-gradient(#F6D365, #FDA085);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title_white {
+  color: white;
+}
+
+.links {
+  position: absolute;
+  right: 0;
+  height: 80px;
+  white-space: nowrap;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+  color: var(--primary-white);
+}
+
+.links > div + div {
+  margin-left: 30px;
+}
+
+.links > div {
+  width: auto;
+  font-size: 14px;
+}
+
+.links > div:hover {
+  text-decoration: underline;
+}

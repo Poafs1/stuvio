@@ -1,0 +1,20 @@
+version: '3'
+
+networks: 
+  stuvio:
+    driver: bridge
+
+services: 
+  mongo:
+    build: 
+      context: ./mongo
+      dockerfile: Dockerfile
+    restart: always
+    container_name: stuvio-mongo-db
+    volumes:
+      - "./mongo/data:/data/db"
+      # - "./mongo/etc/backup:/etc/backup"
+    ports: 
+      - 27017:27017
+    networks:
+      - stuvio

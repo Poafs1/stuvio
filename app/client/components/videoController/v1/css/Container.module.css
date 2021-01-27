@@ -1,0 +1,65 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.container {
+  width: 100%;
+  height: auto;
+  background: rgb(0,0,0);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(26,26,26,1)));
+  background: -o-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(26,26,26,1) 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(26,26,26,1) 100%);
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 15px;
+}
+
+.icon {
+  width: 25px;
+  color: #999999;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.icon svg {
+  width: 100%;
+}
+
+.content {
+  position: relative;
+  -webkit-transition: height var(--speed) ease;
+  -o-transition: height var(--speed) ease;
+  transition: height var(--speed) ease;
+}
+
+.title {
+  
+}
+
+.title h1 {
+  margin: 0px;
+  font-size: 28px;
+}
+
+.container + div {
+  margin-top: 10px;
+}

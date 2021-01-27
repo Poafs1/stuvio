@@ -1,0 +1,115 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title p {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  cursor: pointer;
+  color: #999999;
+}
+
+.icon svg {
+  width: 100%;
+}
+
+.preview {
+  background-color: #333333;
+  margin: 15px auto 0 auto;
+  overflow: hidden;
+}
+
+.apply {
+  margin-top: 50px;
+}
+
+.ratio_container {
+  height: 35px;
+  margin-top: 10px;
+  background-color: var(--text-color-dark);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ratio_nav {
+  width: 33.33%;
+  height: 100%;
+  background-color: #f2f2f2;
+  border-radius: 100px;
+  position: absolute;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  display: none;
+}
+
+.ratio {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ratio > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ratio_label {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px;
+  color: #999999;
+}

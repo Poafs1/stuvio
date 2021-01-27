@@ -1,0 +1,143 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title {
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title h1 {
+  margin: 0px;
+  font-size: 24px;
+}
+
+.del {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.del svg {
+  width: 100%;
+  color: #4D4D4D;
+}
+
+.del:hover svg {
+  color: #999999;
+}
+
+.content p {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.content span {
+  font-weight: 500 !important;
+}
+
+.content a {
+  text-decoration: underline;
+  color: #009dff;
+}
+
+.mesurement_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid #4d4d4d;
+  margin: 15px 0 0 0;
+  padding: 15px 0;
+  border-radius: 5px;
+}
+
+.m_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.m_title p {
+  margin: 0px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.m_content p {
+  margin: 5px 0;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.rate_container {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin: 15px 0 0 0;
+  padding: 15px 0;
+  border-radius: 5px;
+  border: 1px solid #4d4d4d;
+}
+
+.rate_thumb {
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: #999999;
+}
+
+.rate_thumb svg {
+  width: 100%;
+}
+
+.rate_thumb:hover {
+  color: var(--primary-color);
+}
+
+.download_button {
+  margin: 25px 0 0 0;
+}

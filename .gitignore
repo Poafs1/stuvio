@@ -1,0 +1,10 @@
+.env
+.DS_Store
+
+**/mongo/data/*
+**/server/common/store/upload/image/*
+**/server/common/store/upload/video/*
+**/epochs/**
+**.pth
+
+**/__pycache__/

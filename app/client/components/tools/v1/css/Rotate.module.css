@@ -1,0 +1,80 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.container {
+  
+}
+
+.preview {
+  width: 100%;
+  height: 200px;
+}
+
+.preview img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.ratio_container {
+  height: 35px;
+  margin-top: 10px;
+  background-color: var(--text-color-dark);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ratio_nav {
+  width: 25%;
+  height: 100%;
+  background-color: #f2f2f2;
+  border-radius: 100px;
+  position: absolute;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.ratio {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ratio > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ratio_label {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px;
+  color: #999999;
+}
+
+.apply {
+  margin-top: 50px;
+}
