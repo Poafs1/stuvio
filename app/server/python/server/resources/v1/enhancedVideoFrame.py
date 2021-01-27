@@ -20,6 +20,8 @@ class EnhancedVideoFrame(Resource):
         model_version = data['modelVersion']
         frame_duration = data['frameDuration']
 
+        frame_duration = frame_duration + 1
+
         # Init Vid class
         try:
             vid_class = Vid(video_id)
@@ -65,7 +67,9 @@ class EnhancedVideoFrame(Resource):
             
         # Create preview image half original and super-resolution
         # Crop right super-resolution image
-        img_right = Image.open(os.path.join(cwd, 'server/common/store/upload/video', video_id, 'extracted-img/super-resolution-frame', f'{video_id}-super-resolution.jpeg'))
+        cwd = os.getcwd()
+        img_right_path = os.path.join(cwd, 'server/common/store/upload/video', video_id, 'extracted-img/super-resolution-frame', f'{video_id}-super-resolution.jpeg')
+        img_right = Image.open(img_right_path)
         w, h = img_right.size
         img_right_crop = img_right.crop((w/2, 0, w, h))
 

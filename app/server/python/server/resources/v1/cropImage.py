@@ -28,20 +28,6 @@ class CropImage(Resource):
         except Exception as e:
             return 'Error: {}'.format(e), 400
 
-        # Check is user use rotate process before
-        try:
-            is_rotate = data['rotate']
-            angle = data['angle']
-
-            if is_rotate == True:
-                img_class.createFolder('main/rotate')
-                img_class.rotate(angle, image_size, 'main/rotate')
-
-                image_size = 'rotate'
-                extension = 'jpeg'
-        except:
-            pass
-
         # Create crop folder
         img_class.createFolder('main/crop')
 
@@ -50,6 +36,16 @@ class CropImage(Resource):
             img_class.crop(width, height, x, y, image_size, 'main/crop', extension)
         except Exception as e:
             return 'Error: {}'.format(e), 400
+
+        # Check is user use rotate process before
+        try:
+            is_rotate = data['rotate']
+            angle = data['angle']
+
+            if is_rotate == True:
+                img_class.rotate(angle, 'crop', 'main/crop', 'jpeg', 'crop')
+        except:
+            pass
 
         # Generate preview file
         path_dir, filename = img_class.generatePreview('/main/crop', 'crop')
@@ -60,6 +56,5 @@ class CropImage(Resource):
 
         # Remove crop and rotate folder if existed
         img_class.removeFolder('main/crop')
-        img_class.removeFolder('main/rotate')
 
         return res
