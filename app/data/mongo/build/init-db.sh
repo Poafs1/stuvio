@@ -3,6 +3,7 @@ db.createCollection('upload')
 
 use paper
 db.information.remove({})
+
 db.information.insertMany([
     {
         algorithm: "teco-gans",
