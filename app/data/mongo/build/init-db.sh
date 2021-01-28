@@ -10,13 +10,13 @@ db.information.insertMany([
         algorithmLabel: "Temporal Coherence via GANs",
         styles: [
             {
-                name: "portrait",
-                label: "Portrait",
+                name: "pre-train",
+                label: "Pre-Train",
                 rate: 0
             },
             {
-                name: "landscape",
-                label: "Landscape",
+                name: "general",
+                label: "General",
                 rate: 0
             }
         ],
