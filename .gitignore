@@ -7,4 +7,9 @@
 **/epochs/**
 **.pth
 
+**/general/*
+**/pre-train/*
+**/portrait/*
+**/landscape/*
+
 **/__pycache__/
