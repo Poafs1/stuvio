@@ -1,3 +1,6 @@
+use store
+db.createCollection('upload')
+
 use paper
 db.information.remove({})
 db.information.insertMany([
@@ -53,13 +56,8 @@ db.information.insertMany([
         algorithmLabel: "Content Adaptive Resampler",
         styles: [
             {
-                name: "portrait",
-                label: "Portrait",
-                rate: 0
-            },
-            {
-                name: "landscape",
-                label: "Landscape",
+                name: "general",
+                label: "General",
                 rate: 0
             }
         ],
