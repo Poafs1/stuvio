@@ -1,6 +1,7 @@
 from flask import request, send_from_directory
 from flask_restful import Resource
 from common.deepLearningModel.neuralNetwork.v1.srGans import SrGans
+from common.deepLearningModel.neuralNetwork.v1.car import Car
 from PIL import Image
 from common.utils.v1.vid import Vid
 import os
@@ -32,8 +33,9 @@ class EnhancedVideoFrame(Resource):
         if algorithm == 'sr-gans':
             model = SrGans(video_id, model, model_version, None, False, vid_class.getDuration() * vid_class.getFps(), frame_duration)
             model.enhanceFrame()
-        # elif algorithm == 'car':
-        #     print('Use car algorith', flush=True)
+        elif algorithm == 'car':
+            model = Car(video_id, model, model_version, None, False, vid_class.getDuration() * vid_class.getFps(), frame_duration)
+            model.enhanceFrame()
 
         # Create preview folder
         vid_class.createFolder('extracted-img/preview')

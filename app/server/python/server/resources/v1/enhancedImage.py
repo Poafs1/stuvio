@@ -1,7 +1,7 @@
 from flask import request, send_from_directory
 from flask_restful import Resource
 from common.deepLearningModel.neuralNetwork.v1.srGans import SrGans
-# from common.deepLearningModel.neuralNetwork.v1.car import Car
+from common.deepLearningModel.neuralNetwork.v1.car import Car
 
 from common.utils.v2.img import Img
 from PIL import Image
@@ -31,9 +31,9 @@ class EnhancedImage(Resource):
         if algorithm == 'sr-gans':
             model = SrGans(image_id, model, model_version, img_class.getExtension())
             model.enhance()
-        # elif algorithm == 'car':
-        #     model = Car(image_id, model, model_version, img_class.getExtension())
-        #     model.enhance()
+        elif algorithm == 'car':
+            model = Car(image_id, model, model_version, img_class.getExtension())
+            model.enhance()
 
         # Create preview folder
         img_class.createFolder('main/preview')
