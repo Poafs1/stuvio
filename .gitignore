@@ -1,4 +1,4 @@
-.env
+# .env
 .DS_Store
 
 **/mongo/data/*
@@ -6,6 +6,7 @@
 **/server/common/store/upload/video/*
 **/epochs/**
 **.pth
+**.zip
 
 **/general/*
 **/pre-train/*
