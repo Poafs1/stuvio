@@ -1,0 +1,39 @@
+version: '3'
+
+networks:
+  stuvio:
+    driver: bridge
+
+services:
+  # client:
+  #   build: ./client/.
+  #   container_name: stuvio-client
+  #   ports: 
+  #     - 3000:3000
+  #   networks: 
+  #     - stuvio
+
+  # python:
+  #   build: ./server/python/.
+  #   container_name: stuvio-server-python
+  #   volumes:
+  #     - .server/python/server:/server
+  #   ports: 
+  #     - 5000:5000
+  #   networks: 
+  #     - stuvio
+
+  mongo:
+    build: 
+      context: ./data/mongo/.
+    restart: always
+    container_name: stuvio-mongo-db
+    volumes:
+      - "./data/mongo/data:/data/db"
+    ports: 
+      - 27017:27017
+    networks:
+      - stuvio
+  
+  
+  
