@@ -21,3 +21,6 @@ tf_slim
 opencv-python
 opencv-contrib-python
 tqdm
+scikit-build
+cmake
+cppimport
