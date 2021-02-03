@@ -2,8 +2,8 @@
 .DS_Store
 
 **/mongo/data/*
-**/server/common/store/upload/image/*
-**/server/common/store/upload/video/*
+**/image/**
+**/video/**
 **/epochs/**
 **.pth
 **.zip
