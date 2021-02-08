@@ -1,6 +1,6 @@
 gunicorn 
-Flask 
-Flask-RESTful
+flask 
+flask-RESTful
 ffmpeg-python 
 pymongo 
 Pillow

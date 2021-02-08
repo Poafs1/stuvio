@@ -14,14 +14,16 @@ services:
       - stuvio
 
   python:
-    build: ./server/python/.
-    container_name: stuvio-server-python
-    volumes:
-      - ./server/python/server:/server
-    ports: 
-      - 5000:5000
-    networks: 
-      - stuvio
+   build: ./server/python/.
+   container_name: stuvio-server-python
+   volumes:
+     - ./server/python/server:/server
+   ports: 
+     - 5000:5000
+   networks: 
+     - stuvio
+   depends_on:
+     - mongo
 
   mongo:
     build: 
