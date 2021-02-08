@@ -39,6 +39,7 @@ class EnhancedImage(Resource):
         img_class.createFolder('main/preview')
 
         left_dir = 'original'
+        left_extension = img_class.getExtension()
 
         # Handle crop
         try:
@@ -49,9 +50,10 @@ class EnhancedImage(Resource):
             y = data['y']
 
             if is_crop == True:
-                img_class.crop(width, height, x, y, 'original', 'main/preview', img_class.getExtension(), 'original')
-                img_class.crop(width*4, height*4, x*4, y*4, 'super-resolution', 'main/super-resolution', 'jpeg', 'super-resolution')
                 left_dir = 'preview'
+                left_extension = 'jpeg'
+                img_class.crop(width, height, x, y, 'original', 'main/preview', img_class.getExtension(), 'preview')
+                img_class.crop(width*4, height*4, x*4, y*4, 'super-resolution', 'main/super-resolution', 'jpeg', 'super-resolution')
         except:
             pass
 
@@ -73,10 +75,10 @@ class EnhancedImage(Resource):
         img_right_crop = img_right.crop((w/2, 0, w, h))
 
         # Original image
-        img_left = Image.open(os.path.join(cwd, 'server/common/store/upload/image', image_id, 'main', left_dir, f'{image_id}-original.{img_class.getExtension()}'))
+        img_left = Image.open(os.path.join(cwd, 'server/common/store/upload/image', image_id, 'main', left_dir, f'{image_id}-{left_dir}.{left_extension}'))
         img_left_resize = img_left.resize((w, h), resample=Image.BICUBIC)
         img_left_crop = img_left_resize.crop((0, 0, w/2, h))
-
+        
         # Concatinate original and super-resolution image
         concat_img = Image.new('RGB', (img_left_crop.width+img_right_crop.width, img_right_crop.height))
         concat_img.paste(img_left_crop, (0, 0))

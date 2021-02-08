@@ -131,12 +131,12 @@ class Vid:
         output_dir = os.path.join(self.path, target_dir, f'{self.folder_id}-preview-super-resolution.{self.extension}')
 
         os.system(f'ffmpeg -y \
-            -ss 00:00:00 -to 00:00:10 -i {left} \
-            -ss 00:00:00 -to 00:00:10 -i {right} \
+            -i {left} \
+            -i {right} \
             -filter_complex \
             "[0:v]scale=1280:-1,crop=iw/2:ih:0:0[left]; \
             [1:v]scale=1280:-1,crop=iw/2:ih:ow:0[right]; \
-            [left][right]hstack" {output_dir}')
+            [left][right]hstack" -ss 00:00:00 -to 00:00:10 {output_dir}')
         
         return os.path.join(self.path, target_dir), f'{self.folder_id}-preview-super-resolution.{self.extension}'
 
