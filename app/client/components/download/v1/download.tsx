@@ -37,6 +37,7 @@ const Download = () => {
         return
       }
       const blob = await res.blob()
+      // downloadBlob(blob, `${fileName}.mp4`)
       downloadBlob(blob, `${fileName}.${extension}`)
     } 
     else if (isVideo == false) {
@@ -45,6 +46,7 @@ const Download = () => {
         return
       }
       const blob = await res.blob()
+      // downloadBlob(blob, `${fileName}.jpeg`)
       downloadBlob(blob, `${fileName}.${extension}`)
     }
     else {
