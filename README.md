@@ -4,8 +4,12 @@
 ### Requirements
 * Git
 * Docker
+* Nvidia GPU
+* Nvidia CUDA 10.1
+* Python=3.6.9
 ### Installation
-`last modified: 23 Feb 2020`
+`last modified: 24 Feb 2020` \
+***We include `.env` inside git for easy installation example***
 ```sh
 git clone git@github.com:Poafs1/stuvio.git
 cd stuvio
@@ -16,15 +20,10 @@ mkdir app/server/python/server/common/store/upload/image
 mkdir app/server/python/server/common/store/upload/video
 ```
 Download Deep Learning traning model from Google Drive [link](https://drive.google.com/file/d/1PyAJw5yg9_Jp-Q93B3BqAgv-jsRay3wB/view?usp=sharing)
-Put it in directory `app/server/python/server/common/deepLearningModel/`
-
-Build CAR model requirement `require CUDA`
-```sh
-cd app/server/python/server/common/deepLearningModel/car/v1/adaptive_gridsampler
-python3 setup.py build_ext --inplace
-```
+Replace it in directory `app/server/python/server/common/deepLearningModel/`
 
 ### Start Docker
+#### Client + Database
 ```sh
 cd stuvio/app
 ```
@@ -38,6 +37,29 @@ cd data/mongo/build
 ```sh
 sh run.sh
 ```
+#### Server
+Server-Side need to build separately for access host GPU
+```sh
+cd stuvio/app/server/python
+```
+Build docker image from Dockerfile
+```sh
+docker build -t stuvio-server .
+```
+Run docker container at root directory
+```sh
+cd stuvio/app
+```
+```sh
+docker run -p 5000:5000 -it --mount type=bind,souce="$(pwd)/server/python/server",target=/server --gpus all --network app_stuvio --name server stuvio-server
+```
+| Command | Default | Details |
+| -- | -- | -- |
+| `p` | 5000 | Server running port |
+| `mount` | Server directory | Bind mount |
+| `gpus` | all | Specific GPU for Docker to access |
+| `network` | app_stuvio | Set Docker network for Server |
+| `name` | server | Container name |
 
 ## Bug Report
 * Content Adaptive Resampler is not working with API
