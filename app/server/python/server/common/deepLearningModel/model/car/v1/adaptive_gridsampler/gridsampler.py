@@ -1,11 +1,12 @@
 import torch
+import sys
+sys.path.append('server/common/deepLearningModel/model/car/v1/adaptive_gridsampler/dist/adaptive_gridsampler_cuda-0.0.0-py3.6-linux-x86_64.egg')
+import adaptive_gridsampler_cuda
+
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Function, gradcheck
-
-import ctypes
-import pathlib
-# from .adaptive_gridsampler_cuda import forward
+import os
 
 class GridSamplerFunction(Function):
     @staticmethod
@@ -24,10 +25,7 @@ class GridSamplerFunction(Function):
         # ctx.save_for_backward(img, kernels, offsets_h, offsets_v)
 
         output = img.new(b, c, h // downscale_factor, w // downscale_factor).zero_()
-        
-        libname = pathlib.Path().absolute() / "adaptive_gridsampler_cuda.cpython-38-x86_64-linux-gnu.so"
-        c_lib = ctypes.CDLL(libname)
-        c_lib.forward(img, kernels, offsets_h, offsets_v, offset_unit, padding, output)
+        adaptive_gridsampler_cuda.forward(img, kernels, offsets_h, offsets_v, offset_unit, padding, output)
 
         return output
 
