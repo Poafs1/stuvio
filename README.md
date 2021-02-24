@@ -62,7 +62,7 @@ docker run -p 5000:5000 -it --mount type=bind,souce="$(pwd)/server/python/server
 | `name` | server | Container name |
 
 ## Bug Report
-* Content Adaptive Resampler is not working with API
+none
 
 ## Feature Work
 * Implement queueing system
