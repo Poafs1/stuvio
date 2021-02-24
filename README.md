@@ -9,7 +9,7 @@
 * Python=3.6.9
 ### Installation
 `last modified: 24 Feb 2020` \
-***We include `.env` inside git for easy installation example***
+***We include `.env` inside git for easy installation guide***
 ```sh
 git clone git@github.com:Poafs1/stuvio.git
 cd stuvio
@@ -19,7 +19,7 @@ Create image and video directories in server-side
 mkdir app/server/python/server/common/store/upload/image
 mkdir app/server/python/server/common/store/upload/video
 ```
-Download Deep Learning traning model from Google Drive [link](https://drive.google.com/file/d/1PyAJw5yg9_Jp-Q93B3BqAgv-jsRay3wB/view?usp=sharing)
+Download Deep Learning traning model from Google Drive [link](https://drive.google.com/file/d/1PyAJw5yg9_Jp-Q93B3BqAgv-jsRay3wB/view?usp=sharing) \
 Replace it in directory `app/server/python/server/common/deepLearningModel/`
 
 ### Start Docker
