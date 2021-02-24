@@ -6,7 +6,7 @@ load_dotenv()
 class MongoDB(object):
     # Init MongoDB class variable and database name
     def __init__(self, db_name):
-        self.client = MongoClient("mongodb://{}:{}".format(os.getenv('DB_HOST'), int(os.getenv('DB_PORT'))))
+        self.client = MongoClient("mongodb://{}:{}/".format(os.getenv('DB_HOST'), int(os.getenv('DB_PORT'))))
         self.db = self.client[db_name]
 
     # Insert document in db collection

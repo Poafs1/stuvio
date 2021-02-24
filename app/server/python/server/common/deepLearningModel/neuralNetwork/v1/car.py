@@ -17,9 +17,10 @@ class Car:
         self.image_id = image_id
         self.model = model
         cwd = os.getcwd()
-        self.model_dir = os.path.join(cwd, 'server/common/deepLearningModel/model/car', f'v{model_version}', model, 'kgn.pth')
+        self.model_dir = os.path.join(cwd, 'server/common/deepLearningModel/model/car', f'v{model_version}', model)
         self.model_version = model_version
         self.scale = 4
+
         if is_image is True:
             self.img_dir = os.path.join(cwd, 'server/common/store/upload/image', image_id, 'main/original', f'{image_id}-original.{extension}')
         else:
@@ -37,7 +38,7 @@ class Car:
         KSIZE = 3 * SCALE + 1
         OFFSET_UNIT = SCALE
 
-        kernel_generation_net = DSN(k_size=KSIZE, scale=SCALE).cuda()
+        kernel_generation_net = DSN(k_size=KSIZE, scale=4).cuda()
         downsampler_net = Downsampler(SCALE, KSIZE).cuda()
         upscale_net = EDSR(32, 256, scale=SCALE).cuda()
 
@@ -45,13 +46,14 @@ class Car:
         downsampler_net = nn.DataParallel(downsampler_net, [0])
         upscale_net = nn.DataParallel(upscale_net, [0])
 
-        kernel_generation_net.load_state_dict(torch.load(self.model_dir))
-        upscale_net.load_state_dict(torch.load(self.model_dir))
+        kernel_generation_net.load_state_dict(torch.load(os.path.join(self.model_dir, 'kgn.pth')))
+        upscale_net.load_state_dict(torch.load(os.path.join(self.model_dir, 'usn.pth')))
         torch.set_grad_enabled(False)
 
         img = Image.open(self.img_dir).convert('RGB')
         img = np.array(img)
-        h, w = img.shape
+        
+        h, w, _ = img.shape
         img = img[:h // 8 * 8, :w // 8 * 8, :]
         img = np.array(img) / 255.
         img = img.transpose((2, 0, 1))
@@ -108,8 +110,8 @@ class Car:
         downsampler_net = nn.DataParallel(downsampler_net, [0])
         upscale_net = nn.DataParallel(upscale_net, [0])
 
-        kernel_generation_net.load_state_dict(torch.load(self.model_dir))
-        upscale_net.load_state_dict(torch.load(self.model_dir))
+        kernel_generation_net.load_state_dict(torch.load(os.path.join(self.model_dir, 'kgn.pth')))
+        upscale_net.load_state_dict(torch.load(os.path.join(self.model_dir, 'usn.pth')))
         torch.set_grad_enabled(False)
 
         img = Image.open(self.img_dir).convert('RGB')
