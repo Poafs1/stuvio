@@ -51,7 +51,7 @@ Run docker container at root directory
 cd stuvio/app
 ```
 ```sh
-docker run -p 5000:5000 -it --mount type=bind,souce="$(pwd)/server/python/server",target=/server --gpus all --network app_stuvio --name server stuvio-server
+docker run -p 5000:5000 -it --mount type=bind,source="$(pwd)/server/python/server",target=/server --gpus all --network app_stuvio --name server stuvio-server
 ```
 | Command | Default | Details |
 | -- | -- | -- |
