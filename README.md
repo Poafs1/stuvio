@@ -1,4 +1,18 @@
-# Stuvio.io The Web Application for Generate Super-Resolution
+# stuvio
+This existing project is belong to Mahidol University, Faculty of Information Communication and Technology. We implemented for the academic Senior Porject and manipulate for non-profit purpose.
+
+**Advisor:**
+1. Akara Supratak
+
+**Team:**
+1. Prach Yothaprasert
+2. Rattanavaree Muangmai
+3. Waris ???
+
+## Paper Implementation
+* [Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network](https://arxiv.org/pdf/1609.04802.pdf)
+* [Learned Image Downscaling For Upscaling Using Content Adaptive Resampler](https://arxiv.org/pdf/1907.12904v2.pdf)
+* [Learning Temporal Coherence via Self-Supervision of GAN-based Video Generation](https://github.com/thunil/TecoGAN)
 
 ## Setup
 ### Requirements
