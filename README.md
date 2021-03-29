@@ -7,7 +7,7 @@ This existing project is belong to Mahidol University, Faculty of Information Co
 **Team:**
 1. Prach Yothaprasert
 2. Rattanavaree Muangmai
-3. Waris ???
+3. Waris Vorathumdusadee
 
 ## Paper Implementation
 * [Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network](https://arxiv.org/pdf/1609.04802.pdf)
